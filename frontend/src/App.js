@@ -1,18 +1,26 @@
+import {Container} from "react-bootstrap"
+import { BrowserRouter as Router, Route } from 'react-router-dom'
 import Footer from "./components/Footer"
 import Header from "./components/Header"
-import {Container} from "react-bootstrap"
+import HomeScreen from "./screens/HomeScreen"
+import ProductScreen from "./screens/ProductScreen"
+import CartScreen from "./screens/CartScreen"
 
+// redux-thunk --> middleware allows us to make asynchronous 
 function App() {
   return (
-    <>
+    <Router>
     <Header />
     <main className="py-3">
     <Container>
-    <h1>Welcome To Proshop</h1>
+    <Route path='/' exact component={HomeScreen} />
+    <Route path='/product/:id' exact component={ProductScreen} />
+    {/* Adding ? after :id like /card/:id? makes the id optional like if the user goes to the cart screen he should be able to go that screen without aṇy id.  */}
+    <Route path='/cart/:id?' exact component={CartScreen} />
     </Container>
     </main>
     <Footer />
-    </>
+    </Router>
   );
 }
 
