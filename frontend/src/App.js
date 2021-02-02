@@ -11,6 +11,7 @@ import ProfileScreen from "./screens/ProfileScreen"
 import ShippingScreen from "./screens/ShippingScreen"
 import PaymentScreen from "./screens/PaymentScreen"
 import PlaceOrderScreen from "./screens/PlaceOrderScreen"
+import OrderScreen from "./screens/OrderScreen"
 
 // redux-thunk --> middleware allows us to make asynchronous 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <main className="py-3">
     <Container>
     <Route path='/' exact component={HomeScreen} />
+    <Route path='/order/:id' exact component={OrderScreen} />
     <Route path='/product/:id' exact component={ProductScreen} />
     <Route path='/placeorder' exact component={PlaceOrderScreen} />
     <Route path='/payment' exact component={PaymentScreen} />
