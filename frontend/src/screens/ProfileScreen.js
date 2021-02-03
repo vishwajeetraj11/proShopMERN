@@ -35,7 +35,6 @@ const ProfileScreen = ({ location, history }) => {
 
   const orderListMy = useSelector((state) => state.orderListMy)
   const { loading: ordersLoading, error: ordersError, orders } = orderListMy
-  console.log(orders)
 
 
   useEffect(() => {
