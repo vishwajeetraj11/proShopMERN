@@ -15,6 +15,7 @@ import OrderScreen from "./screens/OrderScreen"
 import UserListScreen from "./screens/UserListScreen"
 import UserEditScreen from "./screens/UserEditScreen"
 import ProductListScreen from './screens/ProductlistScreen';
+import ProductEditScreen from './screens/ProductEditScreen';
 
 // redux-thunk --> middleware allows us to make asynchronous 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     <Route path='/admin/userlist' exact component={UserListScreen} />
     <Route path='/admin/productlist' exact component={ProductListScreen} />
     <Route path='/admin/users/:id/edit' exact component={UserEditScreen} />
+    <Route path='/admin/product/:id/edit' exact component={ProductEditScreen} />
     </Container>
     </main>
     <Footer />
