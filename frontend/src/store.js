@@ -6,6 +6,7 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import {
   productListReducer,
   productDetailsReducer,
+  productDeleteReducer
 } from "./reducers/productReducers"
 import { cartReducer } from "./reducers/cartReducers"
 import {
@@ -28,6 +29,7 @@ const middleware = [thunk]
 const reducer = combineReducers({
   productList: productListReducer,
   productDetails: productDetailsReducer,
+  productDelete: productDeleteReducer, 
   cart: cartReducer,
   userLogin: userLoginReducer,
   userSignup: userSignupReducer,

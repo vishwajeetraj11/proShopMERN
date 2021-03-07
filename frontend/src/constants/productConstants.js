@@ -10,3 +10,7 @@ export const PRODUCT_DETAILS_FAIL = 'PRODUCT_DETAILS_FAIL'
 // what happended is that i clicked on one of the product and it stayed there and next time i click on
 // other product it was there and then took time to bring the loader and fetch next product
 export const PRODUCT_DETAILS_CLEAR_REDUX_STORE = 'PRODUCT_DETAILS_CLEAR_REDUX_STORE'
+
+export const PRODUCT_DELETE_REQUEST = 'PRODUCT_DELETE_REQUEST'
+export const PRODUCT_DELETE_SUCCESS = 'PRODUCT_DELETE_SUCCESS'
+export const PRODUCT_DELETE_FAIL = 'PRODUCT_DELETE_FAIL'
