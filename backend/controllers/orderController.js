@@ -91,4 +91,19 @@ const getAllUserOrders = asyncHandler(async (req, res) => {
   }
 })
 
-export { addOrderItem, getOrderById, updateOrderToPaid, getAllUserOrders }
+
+// @description    Get logged in user orders
+// @route          Get /api/orders/orders
+// @access         Private/Admin
+const getAllOrders = asyncHandler(async (req, res) => {
+  const orders = await Order.find({}).populate('user', 'id name')
+
+  if (orders) {
+    res.json(orders)
+  } else {
+    res.status(404)
+    throw new Error("Order not found")
+  }
+})
+
+export { addOrderItem, getOrderById, updateOrderToPaid, getAllUserOrders, getAllOrders }
