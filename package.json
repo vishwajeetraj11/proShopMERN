@@ -13,7 +13,7 @@
     "dev": "concurrently \"yarn run server\" \"yarn run client\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d",
-    "heroku-postbuild": " YARN_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend"
+    "heroku-postbuild": " YARN_PRODUCTION=false yarn install --prefix frontend && yarn run build --prefix frontend"
   },
   "dependencies": {
     "bcryptjs": "2.4.3",

@@ -36,6 +36,7 @@ const __dirname = path.resolve()
 app.use('/uploads', express.static(path.join(__dirname, '/uploads')))
 
 if (process.env.NODE_ENV === 'production') {
+  console.log(process.env.NODE_ENV)
   app.use(express.static(path.join(__dirname, '/frontend/build')))
 
   app.get('*', (req, res) =>
