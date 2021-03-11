@@ -36,11 +36,14 @@ function App() {
     {/* Adding ? after :id like /card/:id? makes the id optional like if the user goes to the cart screen he should be able to go that screen without aṇy id.  */}
     <Route path='/cart/:id?' component={CartScreen} />
     <Route path='/admin/userlist' component={UserListScreen} />
-    <Route path='/admin/productlist' component={ProductListScreen} />
+    <Route path='/admin/productlist' component={ProductListScreen} exact />
+    <Route path='/admin/productlist/:pageNumber' component={ProductListScreen} exact />
     <Route path='/admin/orderlist' component={OrderListScreen} />
     <Route path='/admin/users/:id/edit' component={UserEditScreen} />
     <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
-    <Route path='/search/:keyword' exact component={HomeScreen} />
+    <Route path='/search/:keyword' component={HomeScreen} exact />
+    <Route path='/page/:pageNumber' component={HomeScreen} />
+    <Route path='/search/:keyword/page/:pageNumber' component={HomeScreen} />
     <Route path='/' exact component={HomeScreen} />
     </Container>
     </main>

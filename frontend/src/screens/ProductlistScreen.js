@@ -6,12 +6,14 @@ import Loader from "../components/Loader"
 import { listProducts, deleteProduct, createProduct } from "../actions/productActions"
 import { LinkContainer } from "react-router-bootstrap"
 import {PRODUCT_CREATE_RESET} from "../constants/productConstants"
+import Paginate from "../components/Paginate"
 
 const ProductListScreen = ({ history, match }) => {
   const dispatch = useDispatch()
+  const pageNumber = match.params.pageNumber;
 
   const productList = useSelector((state) => state.productList)
-  const { loading, error, products } = productList
+  const { loading, error, products, pages, page } = productList
 
   const productDelete = useSelector((state) => state.productDelete)
   const { loading: loadingDelete, error: errorDelete, success: successDelete } = productDelete
@@ -42,9 +44,9 @@ const ProductListScreen = ({ history, match }) => {
     if(successCreate) {
       history.push(`/admin/product/${createdProduct._id}/edit`)
     } else {
-      dispatch(listProducts())
+      dispatch(listProducts("", pageNumber))
     }
-  }, [dispatch, history, userInfo, successDelete, successCreate, createdProduct])
+  }, [dispatch, history, userInfo, successDelete, successCreate, createdProduct, pageNumber])
 
   return (
     <>
@@ -67,6 +69,7 @@ const ProductListScreen = ({ history, match }) => {
       ) : error ? (
         <Message varient='danger'>{error}</Message>
       ) : (
+        <>
         <Table striped bordered hover responsive className='table-sm'>
           <thead>
             <tr>
@@ -84,7 +87,7 @@ const ProductListScreen = ({ history, match }) => {
                 <td>{product._id}</td>
                 <td>{product.name}</td>
                 <td>
-                  ${product.price}
+                  Rs{product.price}
                 </td>
                 <td>
                   {product.category}
@@ -109,6 +112,8 @@ const ProductListScreen = ({ history, match }) => {
             ))}
           </tbody>
         </Table>
+        <Paginate pages={pages} page={page} isAdmin={true} />
+        </>
       )}
     </>
   )
