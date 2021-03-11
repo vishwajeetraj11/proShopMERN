@@ -25,22 +25,23 @@ function App() {
     <Header />
     <main className="py-3">
     <Container>
-    <Route path='/' exact component={HomeScreen} />
-    <Route path='/order/:id' exact component={OrderScreen} />
-    <Route path='/product/:id' exact component={ProductScreen} />
-    <Route path='/placeorder' exact component={PlaceOrderScreen} />
-    <Route path='/payment' exact component={PaymentScreen} />
-    <Route path='/shipping' exact component={ShippingScreen} />
-    <Route path='/login' exact component={LoginScreen} />
-    <Route path='/signup' exact component={SignupScreen} />
-    <Route path='/profile' exact component={ProfileScreen} />
+    <Route path='/order/:id' component={OrderScreen} />
+    <Route path='/product/:id' component={ProductScreen} />
+    <Route path='/placeorder' component={PlaceOrderScreen} />
+    <Route path='/payment' component={PaymentScreen} />
+    <Route path='/shipping' component={ShippingScreen} />
+    <Route path='/login' component={LoginScreen} />
+    <Route path='/signup' component={SignupScreen} />
+    <Route path='/profile' component={ProfileScreen} />
     {/* Adding ? after :id like /card/:id? makes the id optional like if the user goes to the cart screen he should be able to go that screen without aṇy id.  */}
-    <Route path='/cart/:id?' exact component={CartScreen} />
-    <Route path='/admin/userlist' exact component={UserListScreen} />
-    <Route path='/admin/productlist' exact component={ProductListScreen} />
-    <Route path='/admin/orderlist' exact component={OrderListScreen} />
-    <Route path='/admin/users/:id/edit' exact component={UserEditScreen} />
-    <Route path='/admin/product/:id/edit' exact component={ProductEditScreen} />
+    <Route path='/cart/:id?' component={CartScreen} />
+    <Route path='/admin/userlist' component={UserListScreen} />
+    <Route path='/admin/productlist' component={ProductListScreen} />
+    <Route path='/admin/orderlist' component={OrderListScreen} />
+    <Route path='/admin/users/:id/edit' component={UserEditScreen} />
+    <Route path='/admin/product/:id/edit' component={ProductEditScreen} />
+    <Route path='/search/:keyword' exact component={HomeScreen} />
+    <Route path='/' exact component={HomeScreen} />
     </Container>
     </main>
     <Footer />
