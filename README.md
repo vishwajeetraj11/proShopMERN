@@ -1,2 +1,1 @@
-# proShopMERN
-Ecommerce Website
+# Ecommerce Website
