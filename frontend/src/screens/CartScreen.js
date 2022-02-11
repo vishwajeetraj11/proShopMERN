@@ -117,7 +117,7 @@ const CartScreen = ({ match, location, history }) => {
 								)}
 								) items
 							</h2>
-							Rs{' '}
+							${' '}
 							{cartItems
 								.reduce(
 									(acc, item) => acc + item.qty * item.price,
