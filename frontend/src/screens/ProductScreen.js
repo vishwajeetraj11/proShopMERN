@@ -59,10 +59,10 @@ const ProductScreen = ({ history, match }) => {
 			setRating(0);
 			setComment('');
 		}
-		if (!product._id || product._id !== productId) {
+		// if (!product._id || product._id !== productId) {
 			dispatch(listProductDetails(productId));
 			dispatch({ type: PRODUCT_CREATE_REVIEW_RESET });
-		}
+		// }
 		return () => {
 			dispatch({ type: PRODUCT_DETAILS_CLEAR_REDUX_STORE });
 		};
